@@ -11,7 +11,6 @@
 
 class Pawn
 {
-
 protected:
 	Size size;
 	PawnType type;
@@ -22,8 +21,6 @@ protected:
 	int boardId;
 	Color color;
 public:
-
-	//Pawn();
 	Pawn();
 	~Pawn();
 	virtual void draw(Board& board, COORD boardField, Color pawnColor);

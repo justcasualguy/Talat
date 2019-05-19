@@ -1,9 +1,6 @@
 #include "pch.h"
 #include "Player.h"
 
-
-
-
 Player::Player():playerColor(BLUE),messageField(NULL),takenPawns(0)
 {
 	//nie dzia³a jak powinno
@@ -29,13 +26,6 @@ Player::Player():playerColor(BLUE),messageField(NULL),takenPawns(0)
 	allPawns[0] = NULL;
 	allPawns[1] = NULL;
 	allPawns[2] = NULL;
-	/*
-	hexagonPawns = new HexagonPawn*[numberOfPawns / 3];
-	squarePawns = new RectanglePawn*[numberOfPawns / 3];
-	trianglePawns = new TrianglePawn*[numberOfPawns / 3];
-
-	hexagonPawns[0] = new HexagonPawn(smaller);
-	*/
 }
 
 
@@ -46,8 +36,7 @@ Player::~Player()
 		delete pawns[i];
 	}
 	delete[] pawns;
-	
-	//allPawns = NULL;
+
 }
 
 
@@ -278,9 +267,7 @@ void Player::putPawn(Pawn& pawn,int pawnId)
 						boardId = 0;
 
 					cursor.set_position(usedBoards[boardId]->findEmptyField(startingRow[boardId]));
-			
-
-
+	
 				}
 				else if (cursor.get_position().X < 0)
 				{
@@ -700,10 +687,6 @@ void Player::set_allPawns(Pawn** pawns, int id)
 {
 	allPawns[id] = pawns;
 }
-
-
-
-
 
 Pawn** Player::get_pawns()
 {

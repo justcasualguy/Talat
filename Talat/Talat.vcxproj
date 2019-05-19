@@ -170,7 +170,6 @@
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="BoardProperties.cpp" />
-    <ClCompile Include="Controls.cpp" />
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="FieldInfo.cpp" />
     <ClCompile Include="Game.cpp" />

@@ -51,8 +51,7 @@ class Player {
 	int takenPawns; 
 	bool AI; // true if players is controlled by computer
 
-	public:
-
+public:
 	Player();
 	~Player();
 	Color get_playerColor();
@@ -71,7 +70,7 @@ class Player {
 	bool isAnyMovePossible(SelectedField& startingPos); //checks if there is any possible move from field
 	bool hasPossibleMove();	//checks if player has any possible move
 	void updateTakenPawns();	//updates 
-void movePawn(SelectedField& startinPos, SelectedField& destination);
+	void movePawn(SelectedField& startinPos, SelectedField& destination);
 
 
 	Board* get_usedBoards();

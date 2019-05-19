@@ -7,6 +7,7 @@ FieldInfo::FieldInfo(): coords({0,0}),occupied(false),pawnType(triangle),pawnSiz
 }
 
 FieldInfo::FieldInfo(COORD fieldCoords): coords({fieldCoords.X,fieldCoords.Y}),occupied(false),pawnType(triangle),pawnSize(smaller), playerNumber(0) {}
+
 FieldInfo::~FieldInfo()
 {
 }
@@ -25,20 +26,10 @@ void FieldInfo::set_fieldInfo(bool isOccupied, PawnType pawnType, Size pawnSize,
 	this->playerNumber = playerNumber;
 }
 
-/*void FieldInfo::set_fieldInfo(Pawn& pawn, int playerNumber)
-{
-	occupied = true;
-	this->pawnType = pawn.get_type();
-	this->pawnSize = pawn.get_size();
-	this->playerNumber = playerNumber;
-}
-*/
 
 bool FieldInfo::isOccupied()
 {
-	if (occupied)
-		return true;
-	return false;
+	return occupied;
 }
 void FieldInfo::set_occupied(bool value)
 {
@@ -59,12 +50,3 @@ PawnType FieldInfo::get_pawnType()
 	return pawnType;
 }
 
-/*Pawn* FieldInfo::get_pawn()
-{
-	return pawn;
-}*/
-
-/*void FieldInfo::set_pawn(Pawn* pawn)
-{
-	this->pawn = pawn;
-}*/

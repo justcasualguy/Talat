@@ -10,8 +10,6 @@ class Cursor : public BoardProperties
 	Color cursorColor;
 	
 public:
-	
-	
 	Cursor();
 	Cursor(COORD cursor);
 	~Cursor();
@@ -21,8 +19,6 @@ public:
 	void draw(Board& board);
 	void clear(Board& board, COORD boardField);
 	
-
-
 	COORD get_position() ;
 	void set_position( COORD position);
 	void set_positionY(short y);

@@ -16,20 +16,15 @@ class FieldInfo
 public:
 	FieldInfo();
 	FieldInfo(COORD fieldCoords);
-	void set_coords(COORD coords);
 	~FieldInfo();
+	void set_coords(COORD coords);
 	COORD get_coords();
-	//void set_pawn(Pawn* pawn);
-	//Pawn* get_pawn();
 	void set_fieldInfo(bool isOccupied, PawnType pawnType, Size pawnSize, int playerNumber);
-	//void set_fieldInfo(Pawn &pawn, int playerNumber);
 	void set_occupied(bool value);
 	int get_playerNumber();
 	int get_pawnId();
-	
 	Size get_pawnSize();
 	PawnType get_pawnType();
-	
 	bool isOccupied();
 };
 

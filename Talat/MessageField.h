@@ -17,8 +17,7 @@ class MessageField
 	public:
 	MessageField();
 	MessageField(COORD fieldSize,COORD initialCoords);
-	void write(string message);
-	//void writeLine<>( message);
+
 	void clear();
 	void set_writingCoord(COORD coords);
 	~MessageField();

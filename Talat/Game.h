@@ -11,9 +11,6 @@ class Game
 {
 
 	Player players[3];
-	Player* player1;//
-	Player* player2;//  used as alias to players[i]
-	Player* player3;//
 	Board playersBoards[3]; //board[0],[1] - player1; board[1],[2] - player2; board[0],[3] player3;
 	COORD topBoardPos;	//1st topLeftCorner position used to start drawing
 	COORD bottomLeftBoardPos;//2nd board topLeftCorner position used to start drawing

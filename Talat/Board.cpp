@@ -59,18 +59,37 @@ void Board::draw()
 	WriteConsoleOutput(hConsole, board, bufferSize, { 0,0}, &s);
 }
 
-void Board::fillFieldBlack(COORD fieldCoords)
-{
 
-	for (int i = 1; i < fieldHeight-1; i++)
+
+
+bool Board::hasEmptyField(short row)
+{
+	for (short i = 0; i < fieldsHorizontal; i++)
 	{
-		for (int j = 1; j < fieldWidth-1; j++)
-		{
-			board[i * boardWidth + j].Char.UnicodeChar = L' ';
-		}
+		if (!fieldsInfo[row*fieldsHorizontal + i].isOccupied())
+			return true;
+		
+	}
+	return false;
+}
+
+COORD Board::findEmptyField(short row)
+{
+	for(short i=0;i<fieldsHorizontal;i++)
+	{
+		if (!fieldsInfo[row*fieldsHorizontal + i].isOccupied())
+			return { i,row };
 	}
 }
 
+COORD Board::findEmptyFieldRight(short row)
+{
+	for (short i = fieldsHorizontal-1; i >= 0; i--)
+	{
+		if (!fieldsInfo[row*fieldsHorizontal + i].isOccupied())
+			return { i,row };
+	}
+}
 
 COORD Board::get_topLeftCornerPos()
 {
@@ -106,40 +125,10 @@ FieldInfo Board::get_fieldInfo(COORD fieldCoords)
 void Board::set_fieldInfo(COORD fieldCoords, bool isOccupied, PawnType pawnType, Size pawnSize, int playerNumber)
 {
 	fieldsInfo[fieldCoords.Y*fieldsHorizontal + fieldCoords.X].set_fieldInfo(isOccupied, pawnType, pawnSize, playerNumber);
-	
+
 }
 
 FieldInfo* Board::get_fieldsInfo(COORD fieldCoords)
 {
 	return &fieldsInfo[fieldCoords.Y*fieldsHorizontal + fieldCoords.X];
 }
-
-bool Board::hasEmptyField(short row)
-{
-	for (short i = 0; i < fieldsHorizontal; i++)
-	{
-		if (!fieldsInfo[row*fieldsHorizontal + i].isOccupied())
-			return true;
-		
-	}
-	return false;
-}
-
-COORD Board::findEmptyField(short row)
-{
-	for(short i=0;i<fieldsHorizontal;i++)
-	{
-		if (!fieldsInfo[row*fieldsHorizontal + i].isOccupied())
-			return { i,row };
-	}
-}
-
-COORD Board::findEmptyFieldRight(short row)
-{
-	for (short i = fieldsHorizontal-1; i >= 0; i--)
-	{
-		if (!fieldsInfo[row*fieldsHorizontal + i].isOccupied())
-			return { i,row };
-	}
-}
-

@@ -62,10 +62,6 @@ Game::Game():whichPlayerTurn(0)
 	players[2].set_number(3);
 
 
-	player1 = &players[0];
-	player2 = &players[1];
-	player3 = &players[2];
-
 	messageField = new MessageField({ 30,20 }, { topBoardPos.X + boardWidth + 5,topBoardPos.Y + boardHeight / 2 });
 	players[0].set_messageField(messageField);
 	players[1].set_messageField(messageField);
@@ -298,6 +294,30 @@ void Game::generatePlayersInfoFile()
 	plik.close();
 }
 
+void Game::noSavedGamesMsg()
+{
+
+	cout << "                                _____                          _                           " << endl;
+	cout << "                               |   | |___    ___ ___ _ _ ___ _| |   ___ ___ _____ ___ ___  " << endl;
+	cout << "                               | | | | . |  |_ -| .'| | | -_| . |  | . | .'|     | -_|_ -| " << endl;
+	cout << "                               |_|___|___|  |___|__,|\\_/|___|___|  |_  |__,|_|_|_|___|___| " << endl;
+	cout << "                                                                   |___|                    " << endl;
+}
+
+void Game::showControls()
+{
+	controlsField->writeLine("Controls:");
+	controlsField->writeLine("Move cursor - Arrow keys,");
+	controlsField->writeLine("Put pawn - Enter");
+	controlsField->writeLine("Select field - Enter");
+	controlsField->writeLine("Move pawn - Enter ");
+	controlsField->writeLine("Cancel selection - B");
+	controlsField->writeLine("Quit - Esc ");
+	controlsField->writeLine("(works after pawns are put)");
+
+
+}
+
 COORD Game::get_gameFieldSize() { return gameFieldSize; }
 void Game::set_gameFieldSize(COORD game_field_size) { gameFieldSize = game_field_size; }
 
@@ -319,26 +339,3 @@ void Game::set_whichPlayerTurn(int playerNumber)
 	this->whichPlayerTurn = playerNumber;
 }
 
-void Game::noSavedGamesMsg()
-{
-
-cout<<"                                _____                          _                           "<<endl;
-cout<<"                               |   | |___    ___ ___ _ _ ___ _| |   ___ ___ _____ ___ ___  "<<endl;
-cout<<"                               | | | | . |  |_ -| .'| | | -_| . |  | . | .'|     | -_|_ -| "<<endl;
-cout<<"                               |_|___|___|  |___|__,|\\_/|___|___|  |_  |__,|_|_|_|___|___| "<<endl;
-cout<<"                                                                   |___|                    "<<endl;
-}
-
-void Game::showControls()
-{
-	controlsField->writeLine("Controls:");
-	controlsField->writeLine("Move cursor - Arrow keys,");
-	controlsField->writeLine("Put pawn - Enter");
-	controlsField->writeLine("Select field - Enter");
-	controlsField->writeLine("Move pawn - Enter ");
-	controlsField->writeLine("Cancel selection - B");
-	controlsField->writeLine("Quit - Esc ");
-	controlsField->writeLine("(works after pawns are put)");
-
-
-}

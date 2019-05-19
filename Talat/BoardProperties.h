@@ -5,7 +5,7 @@
 class BoardProperties
 {
 protected:
-	int fieldsVertical, fieldsHorizontal, fieldWidth, fieldHeight;//ilosc pol wysokosci i szerokosci
+	int fieldsVertical, fieldsHorizontal, fieldWidth, fieldHeight;//how many fields and their sizes
 	short boardHeight;
 	short boardWidth ;
 	Color boardColor;

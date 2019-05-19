@@ -37,7 +37,6 @@ void Cursor::draw(Board &board, COORD boardField)
 
 void Cursor::draw(Board &board, COORD boardField,Color color)
 {
-	//boardField.Y*boardWIdth
 	Color clor = cursorColor;
 	cursorColor = color;
 	draw(board, boardField);

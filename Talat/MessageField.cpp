@@ -13,24 +13,10 @@ MessageField::MessageField( COORD fieldSize, COORD initialCoords): hConsole(GetS
 }
 
 
-
 MessageField::~MessageField()
 {
 }
 
-/*void MessageField::write(string message)
-{
-	
-	cout << message;
-
-}*/
-
-/*void MessageField::writeLine(string message)
-{
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), writeCoords);
-	cout << message;
-	writeCoords.Y++;
-}*/
 
 void MessageField::clear()
 {
